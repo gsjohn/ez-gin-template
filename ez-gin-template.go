@@ -57,7 +57,7 @@ func (r Render) getRenderName(tpl string) string {
 	dir, file := filepath.Split(tpl)
 	dir = strings.Replace(dir, r.TemplatesDir, "", 1)
 	file = strings.TrimSuffix(file, r.Ext)
-	return dir + file
+	return file
 }
 
 func (r Render) Add(name string, tmpl *template.Template) {
