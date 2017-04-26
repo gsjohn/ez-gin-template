@@ -55,6 +55,7 @@ func (r Render) Init() Render {
 
 func (r Render) getRenderName(tpl string) string {
 	dir, file := filepath.Split(tpl)
+	dir = strings.Replace(dir, "\\", "/", -1)
 	dir = strings.Replace(dir, r.TemplatesDir, "", 1)
 	file = strings.TrimSuffix(file, r.Ext)
 	return file
